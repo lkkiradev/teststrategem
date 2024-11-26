@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Champions</title>
+    <link rel="stylesheet" href="../STYLES/champions.css">
+    <link rel="stylesheet" href="../STYLES/footer.css">
+    <link rel="stylesheet" href="../STYLES/header.css">
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class = "navbar-content-container"> 
+                <div class="navbar-brand">
+                    <span class="site-title">STRATEGEM</span>
+                </div>
+            </div>
+                <div class="hamburger" id = "menuButton">☰</div>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/">Chatbot</a></li>
+                    <li><a href="../PAGES/champions.html">Champions</a></li>
+                    <li><a href="../PAGES/tierlist.html">Tier List</a></li>
+                    <li><a href="/">Player Picks</a></li>
+
+                    <li class="profile-dropdown">
+                        <a href="#" id="profileButton">
+                            <img src="../IMAGES/header-images/User.png" alt="profile">
+                        </a>
+                        <!-- Dropdown Menu -->
+                        <div class="dropdown-menu">
+                            <a href="">Profile</a>
+                            <a href="/">FAQs</a>
+                            <a href="/" style="color: red; font-weight: 700" >Log out</a>
+                        </div>
+                    </li>
+                </ul>
+        </nav>
+
+    <div id="sidebar">
+  
+        <div class="menu-bar">
+            <div class="sidebar-title"> <span> STRATAGEM </span> </div>
+          <button class="close-btn" id="closeButton">&times;</button>
+        </div>
+        <a href="">
+        <div class = "user-profile"> 
+            <img src="../IMAGES/header-images/profile.png" alt="profile picture"> 
+        </a>
+            <h2> Ken Takakura </h2> 
+
+        </div>
+        <div class="sidebar-content">
+          <a href="#">Home</a>
+          <a href="#">Talk with Ahri</a>
+          <a href="#">Champions</a>
+          <a href="#">Tier List</a>
+          <a href="#">Player Picks</a>
+          <a href="#">FAQs</a>
+          <a href="#" style="color: red;">Log Out</a>
+            
+        </div>
+      </div>
+
+    </header>
+    <section class="title-container">
+        <h1>Champions</h1>
+    </section>
+
+    <!-- Filters -->
+     <section class = "filters">
+            <nav class="filter-container">
+                <button class="filter-button" data-role="all">All</button>
+                <button class="filter-button" data-role="Mid Lane">Middle Lane</button>
+                <button class="filter-button" data-role="Top Lane">Top Lane</button>
+                <button class="filter-button" data-role="Bottom Lane">Bottom Lane</button>
+                <button class="filter-button" data-role="Support">Support</button>
+                <button class="filter-button" data-role="Jungle">Jungle</button>
+
+            <div class="searchbar-container">
+                <input type="text" class="css-searchBar" id="search-bar" oninput="searchChampions()">
+                <span class="search-icon">
+                    <img src="../images/search.png" alt="magnifying glass">
+                </span> 
+            </div>
+        
+            <select id="role-filter" class="filter-dropdown" onchange="filterChampions(this.value)">
+                <option value="all">All</option>
+                <option value="Mid Lane">Mid Lane</option>
+                <option value="Top Lane">Top Lane</option>
+                <option value="Bottom Lane">Bottom Lane</option>
+                <option value="Support">Support</option>
+                <option value="Jungle">Jungle</option>
+            </select>
+        </nav>
+    </section>
+
+    <main>
+        <section id="please-type-more-message">
+            <h1>Enter at least 2 characters.</h1>
+        </section>
+        <section id="no-results-message">
+            <h1>No results found.</h1>
+        </section>
+
+        <!-- Main Grid -->
+        <div class="css-champion-grid" id="js-champion-grid"></div>
+
+        <script src="../SCRIPTS/champions.js"></script>
+        <script src = "../SCRIPTS/header.js"></script>
+    </main>
+    
+</body>
+
+<footer>
+    <div class="footer-parent">
+        <div class="footer-container">
+            <p> 
+                ©2024 Copyright: Stratagem.com. Stratagem isn't endorsed by Riot Games and doesn't reflect the views or opinions 
+                of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends™ and Riot
+                Games are trademarks or registered trademarks of Riot Games, Inc.
+            </p>
+        </div>
+    </div>
+</footer>
+
+</html>

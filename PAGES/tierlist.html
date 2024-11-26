@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tier List</title>
+    <link rel="stylesheet" href="../STYLES/tierlist.css">
+    <link rel="stylesheet" href="../STYLES/footer.css">
+    <link rel="stylesheet" href="../STYLES/header.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class = "navbar-content-container"> 
+                <a href="/" class="navbar-brand">
+                    <span class="site-title">STRATAGEM</span>
+                </a>
+            </div>
+                <div class="hamburger" id = "menuButton">☰</div>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/">Chatbot</a></li>
+                    <li><a href="../PAGES/champions.html">Champions</a></li>
+                    <li><a href="../PAGES/tierlist.html">Tier List</a></li>
+                    <li><a href="/">Player Picks</a></li>
+
+                    <li class="profile-dropdown">
+                        <a href="#" id="profileButton">
+                            <img src="../IMAGES/header-images/User.png" alt="profile">
+                        </a>
+                        <!-- Dropdown Menu -->
+                        <div class="dropdown-menu">
+                            <a href="/">Profile</a>
+                            <a href="/">FAQs</a>
+                            <a href="/" style="color: red; font-weight: 700;" >Log out</a>
+                        </div>
+                    </li>
+                </ul>
+        </nav>
+
+    <div id="sidebar">
+  
+        <div class="menu-bar">
+            <div class="sidebar-title"> <span> STRATAGEM </span> </div>
+          <button class="close-btn" id="closeButton">&times;</button>
+        </div>
+        <a href="">
+        <div class = "user-profile"> 
+            <img src="../IMAGES/header-images/profile.png" alt="profile picture"> 
+        </a>
+            <h2> Ken Takakura </h2> 
+
+        </div>
+        <div class="sidebar-content">
+          <a href="#">Home</a>
+          <a href="#">Talk with Ahri</a>
+          <a href="#">Champions</a>
+          <a href="#">Tier List</a>
+          <a href="#">Player Picks</a>
+          <a href="#">FAQs</a>
+          <a href="#" style="color: red;">Log Out</a>
+            
+        </div>
+      </div>
+
+    </header>
+
+    <section class="title-container">
+        <h1>Champions Tier List</h1>
+    </section>
+
+    <section class = "filters">
+        <nav class="filter-container">
+            <button class="filter-button" data-role="Top Lane">Top Lane</button>
+            <button class="filter-button" data-role="Jungle">Jungle</button>
+            <button class="filter-button" data-role="Mid Lane">Middle Lane</button>
+            <button class="filter-button" data-role="Support">Support</button>
+            <button class="filter-button" data-role="Bottom Lane">Bot Lane</button>
+
+            <select id="role-filter" class="filter-dropdown" onchange="filterChampions(this.value)">
+                <option value="Mid Lane">Mid Lane</option>
+                <option value="Top Lane">Top Lane</option>
+                <option value="Bottom Lane">Bottom Lane</option>
+                <option value="Support">Support</option>
+                <option value="Jungle">Jungle</option>
+            </select>
+        </nav>
+     </section>       
+     
+     <main>
+
+        <section class="css-tier-container" id="s-color">
+            <h2> S Tier</h2>
+        </section>
+        <div class="tier-champions" id="s-tier-champions"></div> 
+
+        <section class="css-tier-container" id="a-color">
+            <h2> A Tier</h2>
+        </section>
+        <div class="tier-champions" id="a-tier-champions"></div> 
+        
+        <section class="css-tier-container" id="b-color">
+            <h2> B Tier</h2>
+        </section>
+        <div class="tier-champions" id="b-tier-champions"></div>  
+        
+        <section class="css-tier-container" id="c-color">
+            <h2> C Tier</h2>
+        </section>
+        <div class="tier-champions" id="c-tier-champions"></div>  
+        
+        <section class="css-tier-container" id="d-color">
+            <h2> D Tier</h2>
+        </section>
+        <div class="tier-champions" id="d-tier-champions"></div> 
+
+     <script src="../SCRIPTS/tierlist.js"></script>
+     <script src="../SCRIPTS/header.js"></script>
+    </main>
+</body>
+
+<footer>
+    <div class="footer-parent">
+        <div class="footer-container">
+            <p> 
+                ©2024 Copyright: Stratagem.com. Stratagem isn't endorsed by Riot Games and doesn't reflect the views or opinions 
+                of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends™ and Riot
+                Games are trademarks or registered trademarks of Riot Games, Inc.
+            </p>
+        </div>
+    </div>
+</footer>
+
+</html>

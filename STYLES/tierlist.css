@@ -1,0 +1,306 @@
+@import url('https://fonts.cdnfonts.com/css/sk-concretica');
+@import url('https://fonts.googleapis.com/css2?family=Armata&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+
+@font-face {
+    font-family: 'MANATA';
+    src: url(/FONTS/Moonbandit\ -\ MBF\ Manta\ Regular.otf);
+}
+
+@font-face{
+    font-family: 'Neue';
+    src:url(/FONTS/NeueMontreal-Regular.otf)
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding-top: 50px; 
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    height: 100vh;
+    background-image: url('/IMAGES/bg2.png');
+    background-repeat: no-repeat; 
+    background-size: cover;     
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.title-container h1{
+    color: white;
+    font-family: 'SK Concretica', sans-serif;
+    font-size: clamp(1.2rem, 3.5vw, 4.5rem); 
+    font-weight: 100;
+    margin-bottom: 2rem;
+}
+
+.filter-container{
+    display: flex;
+    flex-wrap: nowrap;
+    
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin-inline: auto;
+    margin-bottom: 1rem;
+}
+.filter-container button {
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: 'SK Concretica';
+    font-size: clamp(0.7rem, 1vw + 0.3rem, 0.9rem);
+    padding: clamp(0.7rem, 1vw, 1rem); 
+
+    flex: 0 1 auto; /* Allow buttons to shrink if needed */ 
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.filter-container button.active {
+    background: linear-gradient(90deg, #66FCF1, #5FB6C8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px rgba(102, 252, 241, 0.7), 0 0 20px rgba(102, 252, 241, 0.5);
+    transform: scale(1.2); 
+    font-weight: bold; 
+}
+
+.css-tier-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 1rem auto;
+    max-width: 1200px;
+}
+
+ #s-color {
+    background: linear-gradient(
+        to right,
+        rgba(191, 56, 29, 0) 0%,    
+        rgba(127, 10, 10, 1) 50%,   
+        rgba(255, 103, 48, 0) 100%  
+      );
+}
+
+#a-color {
+    background: linear-gradient(
+        to right,
+        rgba(167, 50, 26, 0) 0%,   
+        rgba(212, 118, 24, 1) 50%, 
+        rgba(167, 59, 19, 0) 100%  
+    );
+}
+
+#b-color {
+    background: linear-gradient(
+        to right,
+        rgba(20, 30, 60, 0) 0%,    
+        rgba(140, 171, 38, 1) 50%, 
+        rgba(30, 20, 60, 0) 100%   
+    );
+}
+
+#c-color {
+    background: linear-gradient(
+        to right,
+        rgba(13, 43, 82, 0) 0%,    
+        rgba(16, 154, 53, 1) 50%, 
+        rgba(13, 43, 82, 0) 100%  
+      );
+}
+
+#d-color {
+    background: linear-gradient(
+        to right,
+        rgba(27, 8, 1, 0) 0%,   
+        rgba(61, 25, 34, 1) 50%,   
+        rgba(27, 8, 1, 0) 100%
+      );
+}
+
+.css-tier-container h2 {
+    color: white;
+    font-family: 'SK Concretica', normal;
+    font-size: clamp(1rem, 2vw, 4rem); /* Responsive font size using clamp */
+    font-weight: 200;
+}
+
+.tier-champions {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    place-items: center;
+    gap: clamp(1rem, 2vw, 2rem);
+    padding: 10px 15px;
+    margin: 1rem auto;
+    max-width: 1200px;
+
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.tier-champions.hidden {
+    opacity: 0; 
+    pointer-events: none; 
+}
+
+.champion-card {
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; 
+    height: auto; 
+    transition: transform 0.3s ease; 
+
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+}
+
+.champion-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+.champion-card p {
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+.popup {
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px); 
+    background: rgba(0, 0, 0, 0.171);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 12px;
+    white-space: nowrap;
+    font-size: 12px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    font-family: 'Neue';
+}
+
+.champion-card:hover .popup {
+    visibility: visible;
+    opacity: 1;
+    animation: slideIn 0.8s ease forwards; 
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-50%) translateY(10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+}
+
+.popup .champ-name {
+    font-family: 'SK-Concretica, sans-serif';
+    font-size: 1.3rem;
+}
+
+.popup .champ-wr {
+    font-size: 1rem;
+}
+
+.filter-dropdown {
+    display: none; 
+}
+
+@media (max-width: 1280px) {
+    .tier-champions {
+        grid-template-columns: repeat(auto-fill, minmax(75px, 1fr)); 
+    }
+    .filters{
+        margin-inline: 2rem;
+    }
+
+    .css-tier-container{
+        margin-inline: 2rem;
+    }
+
+    .tier-champions{
+        margin-inline: 2rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    body{
+        padding-top: 10px;
+    }
+
+    .tier-champions {
+        grid-template-columns: repeat(auto-fill, minmax(50px, 1fr)); 
+    }
+
+    .filter-container button {
+        display: none; 
+   }
+
+     .filter-dropdown {
+        display: block; 
+        padding: 5px;
+
+        border: 2px solid #2A7B78; 
+        border-radius: 30px;  
+
+        background: linear-gradient(90deg, #1E877F, #1B6471);
+        color: #ffffff; 
+        background-color: #1a1a1a;
+
+        font-family: 'SK Concretica', sans-serif; 
+        font-size: clamp(0.9rem, 1vw + 0.5rem, 1rem); 
+
+        order: 1;
+        width: 30%;
+    }
+    
+    .filter-container {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-shrink: 0;
+
+        justify-content: center;
+        align-items: center;
+
+        gap: 1rem;
+        border-radius: 8px; 
+    }
+    .title-container h1{
+        margin-bottom: 1.1rem;
+        
+    }
+}
+
+@media (max-width: 620px) {
+
+    .filter-dropdown{
+        width: 50%;
+    }
+}
+
